@@ -7,10 +7,9 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 from io import BytesIO
 from PIL import Image
-import os
 
 app = Flask(__name__)
-model = load_model('model/emotion_model.h5')  # Cargar el modelo entrenado
+model = load_model('model/emotion_model.h5', compile=False)  # Cargar el modelo entrenado sin recompilar
 
 @app.route('/predict', methods=['POST'])
 def predict():
