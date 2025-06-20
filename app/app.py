@@ -9,7 +9,7 @@ from io import BytesIO
 from PIL import Image
 
 app = Flask(__name__)
-model = load_model('model/emotion_model.h5', compile=False)  # Cargar el modelo entrenado sin recompilar
+model = load_model('model/emotion_model_tf')  # Cargar el modelo entrenado sin recompilar
 
 @app.route('/predict', methods=['POST'])
 def predict():
